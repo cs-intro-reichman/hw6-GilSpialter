@@ -30,22 +30,21 @@ public class Runigram {
 		image = flippedVertically(tinypic);
 		print(image);
 
-		System.out.println();
-		System.out.println("LUMINANCE:"); //-----------------------------------------TEST---TEST----TEST----TEST---------------
-		for (int i = 0; i < image.length; i++)
-			for (int j = 0; j < image [0].length; j++)
-				image[i][j] = luminance(tinypic[i][j]);
-		print(image);
+//		System.out.println();
+//		System.out.println("LUMINANCE:"); //-----------------------------------------TEST---TEST----TEST----TEST---------------
+//		for (int i = 0; i < image.length; i++)
+//			for (int j = 0; j < image [0].length; j++)
+//				image[i][j] = luminance(tinypic[i][j]);
+//		print(image);
 
-		System.out.println();
-		System.out.println("GRAYSCALE PRINT:"); //-----------------------------------TEST---TEST----TEST----TEST-----------------
-		image = grayScaled(tinypic);
-		print(image);
+//		System.out.println();
+//		System.out.println("GRAYSCALE PRINT:"); //-----------------------------------TEST---TEST----TEST----TEST-----------------
+//		image = grayScaled(tinypic);
+//		print(image);
 
 		System.out.println();
 		System.out.println("SCALED PRINT:"); //----------------------------------------TEST---TEST----TEST----TEST------------
-		image = scaled(tinypic, 2, 9
-		);
+		image = scaled(tinypic, 2, 9);
 		print(image);
 
 		System.out.println();
@@ -199,9 +198,14 @@ public class Runigram {
 	public static Color[][] blend(Color[][] image1, Color[][] image2, double alpha) {
 		int width = image1[0].length;
 		int height = image1.length;
+		
+		if (alpha == 0) 	{ return image2; }	
 
 		if ((image2.length != height) || (image2[0].length != width))	//if they are different sizes
 			{ image2 = scaled(image2, width, height); }					//match image2 to image 1
+
+		if (alpha == 1) 	{ return image1; }
+
 		
 		Color blended[][] = new Color[height][width];
 		for (int i = 0; i < height; i++) {

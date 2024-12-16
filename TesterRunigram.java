@@ -196,24 +196,24 @@ public class TesterRunigram {
 
         Color[][] blended = Runigram.blend(img1, img2, 0);
         Color[][] res = img2;
-        
+
         if (blended == null || res == null) {
+
             return false;
         }
         boolean res1 = compareImages(blended, res);
 
         blended = Runigram.blend(img1, img2, 0.21);
         res = safeRead("expected_results/blend_021.ppm");
-        
+
         if (blended == null || res == null) {
             return false;
         }
         boolean res2 = compareImages(blended, res);
 
-
         blended = Runigram.blend(img1, img2, 0.5);
         res = safeRead("expected_results/blend_05.ppm");
-        
+
         if (blended == null || res == null) {
             return false;
         }
@@ -224,17 +224,18 @@ public class TesterRunigram {
         
         if (blended == null || res == null) {
             return false;
-        }
+        }        
+
         boolean res4 = compareImages(blended, res);
 
         blended = Runigram.blend(img1, img2, 1);
         res = img1;
-        
+
         if (blended == null || res == null) {
             return false;
         }
+
         boolean res5 = compareImages(blended, res);
-        
         return res1 && res2 && res3 && res4 && res5;
     }
 

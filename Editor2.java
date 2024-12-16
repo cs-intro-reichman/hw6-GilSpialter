@@ -23,7 +23,6 @@ public class Editor2 {
 		// Next, displays the input image, and pauses for a few seconds. 
 		// Finally, displays the output image.
 		// (Notice that both images have the same dimensions).
-
 		
 		Runigram.setCanvas(imageIn);
 		Runigram.display(imageIn);

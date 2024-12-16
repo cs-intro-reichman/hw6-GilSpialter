@@ -293,10 +293,5 @@ public class TesterRunigram {
         } catch (IOException e) {
             System.out.println("Failed");
         }
-    }
-
-    
+    }   
 }
-
-
-

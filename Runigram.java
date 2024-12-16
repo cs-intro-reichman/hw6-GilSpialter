@@ -54,13 +54,6 @@ public class Runigram {
 		Color c2 = new Color(200, 20, 40);
 		print(blend(c1, c2, 0.25));
 
-		String source = args[0];				//----------------------------------------Test_Editor4------------
-		int n = Integer.parseInt(args[1]);
-		Color[][] sourceImage = Runigram.read(source);
-		sourceImage = scaled(sourceImage, 1000, 1000);
-		Color[][] targetImage = grayScaled(sourceImage);
-		Runigram.setCanvas(sourceImage);
-		Runigram.morph(sourceImage, targetImage, n);
 	}
 
 	/** Returns a 2D array of Color values, representing the image data
